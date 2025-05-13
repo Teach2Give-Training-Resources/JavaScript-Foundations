@@ -5,30 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <script>
         function validateData() {
             if (document.myForm.Email.value == "") {
                 alert("Please enter your email");
-                document.myForm.Email.focus()
-                return false;
+                document.myForm.Email.focus(); //
+                return false; // means stop the form submission
             } else if (document.myForm.Password.value == "") {
                 alert("Please enter your password");
                 document.myForm.Password.focus();
-                return false;
+                return false; // means stop the form submission
             } else {
-                return true
+                return true; // means allow the form submission
             }
         }
     </script>
-
 </head>
 
 <body>
     <h2>Form Validation</h2>
     <form action="message.html" name="myForm" onsubmit="return validateData()">
-        <input type="text" name="Email" placeholder="Enter your email"> <br>
-        <input type="password" name="Password" placeholder="Enter your password"> <br>
+        <input type="text" name="Email" placeholder="Enter your email" required> <br>
+        <input type="password" name="Password" placeholder="Enter your password" required> <br>
         <button type="submit">Submit</button>
     </form>
 </body>
